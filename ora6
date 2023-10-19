@@ -44,7 +44,7 @@ namespace ConsoleApp4 {
 ---------------------------
 
 
-namespace ConsoleApp5 {
+namespace ConsoleApp4 {
     internal class Program {
         class BankClient {
             public string name;
@@ -71,6 +71,182 @@ namespace ConsoleApp5 {
                 Console.WriteLine(nme);
             }
         }
+
+
+---------------------------
+
+
+namespace ConsoleApp4 {
+    internal class Program {
+
+        class User {
+
+            private string Name;
+            private double mgs;
+            private double suly;
+            private double bmi;
+
+            private double bmiCalc(double suly_, double mgs_) {
+                double mgss = mgs * mgs; 
+                double cbmi = suly_/mgss;
+                return cbmi;
+            }
+
+            public void setData(double suly_, double mgs_) {
+                Name = "Bela";
+                suly = suly_;
+                mgs = mgs_;
+                bmi = bmiCalc(suly_, mgs_);
+            }
+
+            public double getBmi() {
+                return bmi;
+            }
+        }
+
+        static void Main(string[] args) {
+
+            double mgss;
+            double sulyy;
+
+            User useralfa = new User();
+            mgss = 1.71;
+            sulyy = 85;
+            useralfa.setData(mgss, sulyy);
+            Console.WriteLine(useralfa.getBmi());
+        }
+    }
+}
+
+
+---------------------------
+
+
+namespace ConsoleApp4 {
+    internal class Program {
+
+        class User {
+
+            private string Name;
+            private double mgs;
+            private double suly;
+            private double bmi;
+
+            private double bmiCalc(double suly_, double mgs_) {
+                double mgss = mgs * mgs; 
+                double cbmi = suly_/mgss;
+                return cbmi;
+            }
+
+            public void setData(double suly_, double mgs_) {
+                Name = "Bela";
+                suly = suly_;
+                mgs = mgs_;
+                bmi = bmiCalc(suly_, mgs_);
+            }
+
+            public (string a, double b, double c, double d) getInfo() {
+                return (Name, mgs, suly, bmi);
+            }
+        }
+
+        static void Main(string[] args) {
+
+            double mgss;
+            double sulyy;
+
+            User useralfa = new User();
+            mgss = 1.71;
+            sulyy = 85;
+            useralfa.setData(mgss, sulyy);
+            Console.WriteLine(useralfa.getInfo().a);
+            Console.WriteLine(useralfa.getInfo().b);
+            Console.WriteLine(useralfa.getInfo().c);
+            Console.WriteLine(useralfa.getInfo().d);
+        }
+    }
+}
+
+
+---------------------------
+
+
+namespace ConsoleApp4 {
+    internal class Program {
+
+        class Book {
+
+            private string title;
+            private string author;
+            private string year;
+            private string pages;
+
+            public void update(string title, string author, string year, string pages) {
+
+                this.title = title;
+                this.author = author;
+                this.year = year;
+                this.pages = pages;
+            }
+
+            public string allData() {
+
+                string result = this.author + ": " + this.title + ", " + this.year + " (" + this.pages + ") ";
+                return result;
+            }
+        }
+
+        static void Main(string[] args) {
+            string tit = "The Hobbit - or There and Back Again";
+            string ath = "J.R.R. Tolkien";
+            string y = "1937";
+            string pg = "312";
+            Book tio = new Book();
+            tio.update(tit, ath, y, pg);
+            Console.WriteLine(tio.allData());
+        }
+    }
+}
+
+
+---------------------------
+
+
+namespace ConsoleApp4 {
+    internal class Program {
+
+        class Book {
+
+            private string title;
+            private string author;
+            private string year;
+            private string pages;
+
+            public Book(string title, string author, string year, string pages) {
+
+                this.title = title;
+                this.author = author;
+                this.year = year;
+                this.pages = pages;
+            }
+
+            public string allData() {
+
+                string result = this.author + ": " + this.title + ", " + this.year + " (" + this.pages + ") ";
+                return result;
+            }
+        }
+
+        static void Main(string[] args) {
+            string tit = "The Hobbit - or There and Back Again";
+            string ath = "J.R.R. Tolkien";
+            string y = "1937";
+            string pg = "312";
+            Book tio = new Book(tit, ath, y, pg);
+            Console.WriteLine(tio.allData());
+        }
+    }
+}
 
 
 ---------------------------
