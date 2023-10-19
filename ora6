@@ -1,0 +1,78 @@
+namespace ConsoleApp4 {
+
+    internal class Program {
+        class BankClient {
+            public string name;
+            string userID;
+            private DateTime dateOfBirth;
+            public double balance;
+            public bool SetName(string clientName) {
+                bool result;
+                if (clientName.Length < 2) {
+                    result = false;
+                }else {
+                    name = clientName;
+                    result = true;
+                }
+                return result;
+            }
+
+            public string GetName() {
+                return name;
+            }
+
+            public string[] GetFirstnameAndLastname() {
+                string[] firstAndLast = name.Split(' ');
+                return firstAndLast;
+            }
+        }
+
+        static void Main(string[] args) {
+            string temp;
+            bool check;
+            Console.WriteLine("Ügyfél neve:");
+            temp = Convert.ToString(Console.ReadLine());
+            BankClient clientOne = new BankClient();
+            check = clientOne.SetName(temp);
+            Console.WriteLine(check);
+            Console.WriteLine(clientOne.GetName());
+        }
+    }
+}
+
+
+---------------------------
+
+
+namespace ConsoleApp5 {
+    internal class Program {
+        class BankClient {
+            public string name;
+            string userID;
+            private DateTime dateOfBirth;
+            public double balance;
+            public void SetName(string clientName) {
+                name = clientName;
+            }
+
+            public string[] GetFirstnameAndLastname() {
+                string[] firstAndLast = name.Split(' ');
+                return firstAndLast;
+            }
+        }
+
+        static void Main(string[] args) {
+            string temp;
+            Console.WriteLine("Ügyfél neve:");
+            temp = Convert.ToString(Console.ReadLine());
+            BankClient clientOne = new BankClient();
+            clientOne.SetName(temp);
+            foreach(var nme in clientOne.GetFirstnameAndLastname()) {
+                Console.WriteLine(nme);
+            }
+        }
+
+
+---------------------------
+
+
